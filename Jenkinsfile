@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDS}", passwordVariable: 'dckr_pat__o2RUlKawVtEC4reXPbn4SXyavk', usernameVariable: 'subrahmanyamkv')]) {
+        withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDS}", passwordVariable: 'omesairam8@', usernameVariable: 'subrahmanyamkv')]) {
           sh "echo \$DOCKER_PASSWORD | docker login -u \$DOCKER_USERNAME --password-stdin docker.io"
           sh 'docker push $DOCKER_BFLASK_IMAGE'
         }
